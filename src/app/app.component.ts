@@ -44,4 +44,5 @@ export class AppComponent {
   }
 
   // Reference : https://angularfirebase.com/lessons/redux-from-scratch-angular-rxjs/
+  // Install redux : https://www.npmjs.com/package/@angular-redux/store
 }
