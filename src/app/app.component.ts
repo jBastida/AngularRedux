@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {Store} from './redux/store.service';
 import {Action} from './redux/action';
 import {Observable} from 'rxjs';
+import {Mammalian} from './entity/mammalian';
+import {Birds} from './entity/birds';
 
 @Component({
   selector: 'app-root',
@@ -20,17 +22,22 @@ export class AppComponent {
 
   set(): void {
     // Only use in special case because it will delete all and add the new payload
-    this.store.dispatch(new Action('SET', {hello: 'world'}));
+    this.store.dispatch(new Action('SET', {
+      animals: [
+        new Mammalian('Coyote', 12, 'male', 4, 'hair'),
+        new Birds('Roadrunner', 10, 'male', 0, 500)
+      ]
+    }));
   }
 
   update(): void {
     //  It's the most used to add/update data without delete others elements
-    this.store.dispatch(new Action('UPDATE', {spanish: {hola: this.inputValue}}));
+    this.store.dispatch(new Action('UPDATE_POSITION',  new Mammalian('A', 0, 'B', 1, 'C'), 1));
   }
 
   delete(): void {
     // It's the most used to delete certain data without delete others elements
-    this.store.dispatch(new Action('DELETE', 'spanish'));
+    this.store.dispatch(new Action('DELETE_POSITION', 0));
   }
 
   clear(): void {
