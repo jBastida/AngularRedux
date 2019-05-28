@@ -51,4 +51,5 @@ export class AppComponent {
   }
 
   // Reference : https://redux.js.org/recipes/using-object-spread-operator
+  // Install redux : https://www.npmjs.com/package/@angular-redux/store
 }
