@@ -50,5 +50,5 @@ export class AppComponent {
     this.store.dispatch(new Action('RESET_ONE', this.inputValue));
   }
 
-  // Reference : https://angularfirebase.com/lessons/redux-from-scratch-angular-rxjs/
+  // Reference : https://redux.js.org/recipes/using-object-spread-operator
 }
